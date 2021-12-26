@@ -1,0 +1,24 @@
+.filter_label {
+  display: flex;
+  align-items: baseline;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(3, 54, 48);
+}
+.filter_input {
+  padding: 5px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: rgba(47, 179, 69, 0.548);
+  font-size: 18px;
+  color: rgb(13, 13, 14);
+  margin-left: 10px;
+  margin-right: auto;
+}
+.filter_input:focus {
+  outline: 2px solid rgb(243, 184, 56);
+}
