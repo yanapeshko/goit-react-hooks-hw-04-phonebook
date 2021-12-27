@@ -24,16 +24,16 @@ export default function App() {
       number,
     };
     contacts.map(contact => contact.name).includes(name)
-      ? alert(`Inputed ${name} is already in the contacts`)
+      ? alert(`Contact ${name} is already in the contacts`)
       : setContacts([...contacts, contact]);
   };
 
-  const handleFilterContacts = e => {
-    return setFilter(e.currentTarget.value);
-  };
+  const getVisibleContacts = () => {
+    const normalizedFilter = filter.toLowerCase();
 
-  const getFilteredContacts = () => {
-    return contacts.filter(({ name }) => name.toLowerCase().includes(filter));
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter),
+    );
   };
 
   const deleteContact = contactId => {
@@ -49,9 +49,9 @@ export default function App() {
       <ContactForm onSubmit={addContact} />
 
       <h2 className="title">Contacts</h2>
-      <Filter filter={filter} onFilterChange={handleFilterContacts} />
+      <Filter value={filter} onFilterChange={e => setFilter(e.target.value)} />
       <ContactList
-        contacts={getFilteredContacts()}
+        contacts={getVisibleContacts()}
         handleDelete={deleteContact}
       />
     </div>

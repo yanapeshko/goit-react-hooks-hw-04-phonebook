@@ -15,7 +15,6 @@
   color: black;
   text-shadow: 0 0 10px rgb(219, 221, 68);
   font-weight: 700;
-  text-transform: uppercase;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -25,7 +24,6 @@
   color: black;
   text-shadow: 0 0 10px rgb(219, 221, 68);
   font-weight: 600;
-  text-transform: uppercase;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
