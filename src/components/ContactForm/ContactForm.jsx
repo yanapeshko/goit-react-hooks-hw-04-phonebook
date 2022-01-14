@@ -6,22 +6,11 @@ export default function ContactForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const handleChange = e => {
-    const { name, value } = e.currentTarget;
-
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        return;
-    }
+  const handleChange = ({ currentTarget: { name, value } }) => {
+    name === 'name' ? setName(value) : setNumber(value);
   };
 
-  const reset = () => {
+  const resetState = () => {
     setName('');
     setNumber('');
   };
@@ -29,11 +18,8 @@ export default function ContactForm({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const inputName = e.currentTarget.name.value;
-    const inputNumber = e.currentTarget.number.value;
-
-    onSubmit(inputName, inputNumber);
-    reset();
+    onSubmit(name, number);
+    resetState();
   };
 
   return (

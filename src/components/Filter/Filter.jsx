@@ -10,14 +10,14 @@ function Filter({ filter, onFilterChange }) {
         type="text"
         name="filter"
         value={filter}
-        onChange={onFilterChange}
+        onChange={e => onFilterChange(e.target.value)}
       />
     </label>
   );
 }
 
 Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onFilterChange: PropTypes.func.isRequired,
 };
 

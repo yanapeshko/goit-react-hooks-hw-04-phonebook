@@ -6,10 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #e0e2c5;
-  background: linear-gradient(#eef0da, #dfe2c3, #c6ca86);
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background: linear-gradient(#eef0da, #dfe2c3, #c6ca86) no-repeat center;
   min-height: 100vh;
 }
 

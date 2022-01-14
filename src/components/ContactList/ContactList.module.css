@@ -4,6 +4,7 @@
   padding: 0;
 }
 .item {
+  position: relative;
   width: 350px;
   padding: 10px;
   border-radius: 5px;
@@ -21,6 +22,9 @@
   color: rgb(7, 10, 6);
 }
 .item_button {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
   cursor: pointer;
   width: 100px;
   height: 30px;

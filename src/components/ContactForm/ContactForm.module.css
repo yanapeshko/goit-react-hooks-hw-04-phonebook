@@ -11,6 +11,8 @@
   background-color: rgba(47, 179, 69, 0.548);
 }
 .form_input {
+  display: flex;
+  flex-direction: column;
   padding: 5px;
   width: 200px;
   height: 30px;

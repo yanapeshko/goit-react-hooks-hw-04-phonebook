@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import ContactForm from '../ContactForm';
 import ContactList from '../ContactList';
 import Filter from '../Filter';
-import './App.css';
+import s from './App.module.css';
 
 export default function App() {
   const [contacts, setContacts] = useState([]);
@@ -23,9 +23,9 @@ export default function App() {
       name,
       number,
     };
-    contacts.map(contact => contact.name).includes(name)
-      ? alert(`Contact ${name} is already in the contacts`)
-      : setContacts([...contacts, contact]);
+    const isDuplicate = contacts.find(contact => contact.name === name);
+    if (isDuplicate) alert(`Contact ${name} is already in the contacts`);
+    setContacts([...contacts, contact]);
   };
 
   const getVisibleContacts = () => {
@@ -39,21 +39,18 @@ export default function App() {
   const deleteContact = contactId => {
     setContacts(contacts.filter(contact => contact.id !== contactId));
   };
-
+  const visibleContacts = getVisibleContacts();
   return (
-    <div className="main_container">
-      <div className="main_title_container">
-        <h1 className="main_title">Phonebook</h1>
+    <div className={s.main_container}>
+      <div className={s.main_title_container}>
+        <h1 className={s.main_title}>Phonebook</h1>
       </div>
 
       <ContactForm onSubmit={addContact} />
 
-      <h2 className="title">Contacts</h2>
-      <Filter value={filter} onFilterChange={e => setFilter(e.target.value)} />
-      <ContactList
-        contacts={getVisibleContacts()}
-        handleDelete={deleteContact}
-      />
+      <h2 className={s.title}>Contacts</h2>
+      <Filter value={filter} onFilterChange={setFilter} />
+      <ContactList contacts={visibleContacts} handleDelete={deleteContact} />
     </div>
   );
 }
